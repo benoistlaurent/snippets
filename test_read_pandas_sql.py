@@ -12,7 +12,6 @@ con = sqlite3.connect(database)
 
 idlist = ['0012142', '0123123']
 
-# !! What if column are not named??
-query = 'select * from data where idcli in {}'.format(tuple(idlist))
+query = 'select * from data where "0" in {}'.format(tuple(idlist))
 
 df = pandas.read_sql(query, con)
