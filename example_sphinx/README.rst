@@ -100,9 +100,9 @@ will be used by `sphinx-build` to generate the HTML documentation.
 
 3. Generate the HTML documentation::
 
-    $ make html
+    $ make -C docs html
 
-The output main document is `_build/index.html`
+The output main document is `docs/_build/html/index.html`
 
 
 
