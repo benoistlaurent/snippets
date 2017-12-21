@@ -74,6 +74,24 @@ directory, which we be the root directory for all documentation.
         'sphinxcontrib.napoleon'
     ]
 
+3. In the same file, add the current directory in the Python search path so
+that the package directory is found during the documentation build process::
+
+    $ vi docs/conf.py
+    # conf.py
+
+    import os
+    import sys
+
+    # Get the project root dir, which is the parent dir of this
+    cwd = os.getcwd()
+    project_root = os.path.dirname(cwd)
+
+    # Insert the project root dir as the first element in the PYTHONPATH.
+    # This lets us ensure that the source package is imported, and that its
+    # version is used.
+    sys.path.insert(0, project_root)
+
 
 Generate you project documentation
 ----------------------------------
