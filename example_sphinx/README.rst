@@ -18,7 +18,11 @@ Install pre-requisites
 
 I recommand using a with virtual environment to install your package dependencies.
 
-1. Setting up the virtual environment::
+1. Install virtualenv::
+
+    $ pip install virtualenv
+
+2. Setting up the virtual environment::
 
     $ virtualenv project-env
     $ source project-env/bin/activate
@@ -26,7 +30,7 @@ I recommand using a with virtual environment to install your package dependencie
 We will then need to install `Sphinx`_ and `Napoleon`_, a Sphinx extension
 that enables Sphinx to parse Google style docstrings.
 
-2. Install Sphinx and the napoleon extension::
+3. Install Sphinx and the napoleon extension::
 
     $ pip install sphinx sphinxcontrib-napoleon
 
