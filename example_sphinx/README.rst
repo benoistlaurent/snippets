@@ -18,7 +18,11 @@ Install pre-requisites
 
 I recommand using a with virtual environment to install your package dependencies.
 
-1. Setting up the virtual environment::
+1. Install virtualenv::
+
+    $ pip install virtualenv
+
+2. Setting up the virtual environment::
 
     $ virtualenv project-env
     $ source project-env/bin/activate
@@ -26,7 +30,7 @@ I recommand using a with virtual environment to install your package dependencie
 We will then need to install `Sphinx`_ and `Napoleon`_, a Sphinx extension
 that enables Sphinx to parse Google style docstrings.
 
-2. Install Sphinx and the napoleon extension::
+3. Install Sphinx and the napoleon extension::
 
     $ pip install sphinx sphinxcontrib-napoleon
 
@@ -73,6 +77,24 @@ directory, which we be the root directory for all documentation.
         'sphinx.ext.viewcode',
         'sphinxcontrib.napoleon'
     ]
+
+3. In the same file, add the current directory in the Python search path so
+that the package directory is found during the documentation build process::
+
+    $ vi docs/conf.py
+    # conf.py
+
+    import os
+    import sys
+
+    # Get the project root dir, which is the parent dir of this
+    cwd = os.getcwd()
+    project_root = os.path.dirname(cwd)
+
+    # Insert the project root dir as the first element in the PYTHONPATH.
+    # This lets us ensure that the source package is imported, and that its
+    # version is used.
+    sys.path.insert(0, project_root)
 
 
 Generate you project documentation
