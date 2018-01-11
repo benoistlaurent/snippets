@@ -11,6 +11,13 @@ import datetime
 def now(fmt):
     """Return the date as a string in the format `fmt`.
 
+    This is a useless image:
+
+    .. figure:: images/sweat.jpg
+       :align: center
+
+       And this is a useless legend
+
     Args:
         fmt (str): date string format compatible with `datetime.strftime`.
 
